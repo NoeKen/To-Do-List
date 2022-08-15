@@ -7,10 +7,14 @@ import AppConfig from '../constants/config';
 import { ArticlesForm, ArticlesList, ArticlesSingle } from '../containers';
 
 import AboutComponent from '../components/About';
+import ToDo from '../containers/TodoWelcome';
+import AddTask from '../containers/AddTodo';
+import Test from '../containers/Test';
 
 const Index = (
   <Stack hideNavBar>
     <Scene hideNavBar>
+    <Scene key='TestPage' component={Test}  /> 
       <Tabs
         key="tabbar"
         swipeEnabled
@@ -23,8 +27,9 @@ const Index = (
           title={AppConfig.appName}
           icon={() => <Icon name="planet" {...DefaultProps.icons} />}
           {...DefaultProps.navbarProps}
-        >
-          <Scene key="home" component={AboutComponent} />
+        >    
+          <Scene key='TodoWelcome' component={ToDo}  />     
+          <Scene key="home2" component={AboutComponent} />
         </Stack>
 
         <Stack
@@ -33,6 +38,7 @@ const Index = (
           icon={() => <Icon name="list" {...DefaultProps.icons} />}
           {...DefaultProps.navbarProps}
         >
+          <Scene key='AddTask' component={AddTask}  /> 
           <Scene key="articlesList" component={ArticlesList} />
           <Scene key="articlesSingle" component={ArticlesSingle} back />
         </Stack>
