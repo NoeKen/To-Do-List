@@ -9,7 +9,7 @@ import {
   View,
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import uuid from 'react-native-uuid';
+// import uuid from 'react-native-uuid';
 import TodoItem from '../components/Todo/ToDoItem';
 
 function test() {
@@ -21,17 +21,17 @@ const ToDo = ({ navigation }) => {
 
   const [items, setItems] = useState([
     {
-      id: uuid.v4(),
+      // id: uuid.v4(),
       text: 'Faire un bébé',
       descp: 'Pas important mais faut le faire. ',
     },
     {
-      id: uuid.v4(),
+      // id: uuid.v4(),
       text: 'Voyager dans le monde',
       descp: 'Je suis un citoyen du monde ...',
     },
     {
-      id: uuid.v4(),
+      // id: uuid.v4(),
       text: 'Ameliorer la vie des personnes autour de soie',
       descp: 'One of my greatest wishes',
     },
@@ -56,7 +56,7 @@ const ToDo = ({ navigation }) => {
 
   const AddItem = (text, descp) => {
     setItems((oldItems) => {
-      return [{ id: uuid.v4(), text, descp }, ...oldItems];
+      // return [{ id: uuid.v4(), text, descp }, ...oldItems];
     });
   };
 
